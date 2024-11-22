@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./css/all.css">
+      <style>
+            * {
+                  box-sizing: border-box;
+                  margin: 0;
+                  padding: 0;
+            }
+            body {
+                  background: white;
+                  width: 100vw;
+                  height: 100vh;
+            }
+            #ytIcon {
+                  line-height: 55px;
+            }
+            #ytIcon img{
+                  text-align: center;
+            }
+            
+            #top{
+                  width: 100vw;
+                  height: 55px; /* 高固定 */
+                  vertical-align: middle;
+                  /* overflow: hidden 強制讓父容器包含所有浮動子元素。 */
+                  overflow: hidden;
+                  /* background: deeppink; */
+                  font-family: "Oswald", sans-serif;
+            }
+            #top table {
+                  margin: auto;
+                  width: 98vw;
+                  height: 55px;
+                  /* background: greenyellow; */
+            }
+            #top td{
+                  vertical-align: middle;
+                  height: 55px;
+            }
+
+            #top td:nth-child(1) {
+                  width: 25%;
+                  /* background: red; */
+            }
+            #top td:nth-child(2) {
+                  width: 50%;
+                  text-align: center;
+                  /* background: blue; */
+            }
+            #top td:nth-child(3) {
+                  width: 25%;
+            }
+            #top td:nth-child(3) img {
+                  float: right;
+                  height: 40px;
+                  /* background: khaki; */
+            }
+            
+            #search{
+                  width: 40vw;
+                  height: 40px;
+                  float: left;
+                  border: 1px solid #000;
+                  border-radius: 25px;
+                  background: linear-gradient(90deg, transparent 0%, transparent 92%, #eee 92%, #eee 100%);
+                  text-align: right;
+            }
+            
+            #microBg {
+                  width: 40px;
+                  height: 40px;
+                  right: 90px;
+                  float: right;
+                  border-radius: 50%;
+                  position:relative;
+                  background:rgba(0, 0, 0, 0.1);
+            }
+            
+            #bard{
+                  width: 80px; /* 寬度固定 */
+                  height: 100vh;
+                  float: left;
+                  text-align: center;
+                  position: fixed;
+                  /* background: deepskyblue; */
+            }
+            #bard table{
+                  width: 100%;
+                  padding: 10px;
+            }
+            #bard td {
+                  text-align: center;
+                  font-size: 10px;
+                  padding-bottom: 10px;
+            }
+            
+            #wrap{
+                  /* width: 100vw; */
+                  width: calc(100% - 80px); /* 相對於左邊固定做彈性 */
+                  height:calc(100vh - 55px);
+                  /* overflow: hidden; */
+                  padding: 10px;
+                  float: right;
+                  overflow: hidden;
+                  /* background: lightpink; */
+            }
+            #filter{
+                  height: 50px;/* 高固定 */
+                  position: fixed;
+                  margin-top: 10px;
+                  /* background: darkturquoise; */
+            }
+            #filter span {
+                  margin: 5px;
+                  line-height: 50px;
+                  font-size: 14px;
+                  border-radius: 5px;
+                  background: #eee;
+                  padding: 5px;
+            }
+            #video_option{
+                  /* 圖片用 js 往下延伸 */
+                  width:100%;
+                  height:calc(100% - 50px);
+                  margin-top: 60px;
+                  vertical-align: text-top;
+                  /* text-align: center; */
+                  /* background: darkseagreen; */
+            }
+            #video_option div {
+                  display: inline;
+                  width: 320px;
+                  height: 240px;
+                  float: left;
+                  /* background-color: deepskyblue; */
+            }
+            #video_option img {
+                  width: 320px;
+                  /* background: lightgreen; */
+            }
+            img{
+                  width: 42px;
+                  padding: 10px;
+                  vertical-align: middle;
+            }
+      </style>
+</head>
+<body>
+      <form>
+            <div id="top">
+                  <table>
+                        <tr>
+                              <td>
+                                    <span>
+                                          <img src="./icon_img/menu.png">
+                                    </span>
+                                    <span id="ytIcon">
+                                          <img src="./icon_img/youtube.png" style="width: 55px;">
+                                          <span style="font-size: 20px;">YouTube</span>
+                                          <sup style="font-size: 10px;">TW</sup>
+                                    </span>
+                              </td>
+                              <td>
+                                    <div id="search">
+                                          <img src="./icon_img/search.png">
+                                    </div>
+                                    <div id="microBg">
+                                                <img src="./icon_img/microphone.png">
+                                    </div>
+                              </td>
+                              <td>
+                                    <img src="./icon_img/user0.png">
+                                    <img src="./icon_img/bell.png">
+                                    <img src="./icon_img/video-camera.png">
+                        </tr>
+                  </table>
+            </div>
+      </form>
+      <div id="bard">
+            <table>
+                  <tr>
+                        <td>
+                              <img src="./icon_img/house-black-silhouette-without-door.png">
+                              <p>首頁</p>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td>
+                              <img src="./icon_img/play.png">
+                              <p>Short</p>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td>
+                              <img src="./icon_img/youtube (1).png">
+                              <p>訂閱內容</p>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td>
+                              <img src="./icon_img/user.png">
+                              <p>個人中心</p>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td>
+                              <img src="./icon_img/historical.png">
+                              <p>觀看紀錄</p>
+                        </td>
+                  </tr>
+            </table>
+      </div>
+            <div id="wrap">
+                  <div id="filter">
+                        <span>全部</span>
+                        <span>音樂</span>
+                        <span>合輯</span>
+                        <span>新聞</span>
+                        <span>遊戲</span>
+                        <span>直播中</span>
+                        <span>動畫</span>
+                        <span>最新上傳</span>
+                        <span>已觀看</span>
+                        <span>令人耳目一新</span>
+                  </div>
+                  <div id="video_option">
+                        <div>
+                              <a href="">
+                                    <img src="https://i.ytimg.com/vi/7HgJIAUtICU/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYfyAnKCcwDw==&rs=AOn4CLBhO7AFbYNYhhKMSaPhZ53ImhHvDg">
+                              </a>
+                              <h4>合輯 - 踊り子 / Vaundy：MUSIC VIDEO</h4>
+                              <span>Vaundy和其他藝人</span>
+                        </div>
+                        <div>
+                              <a href="https://www.youtube.com/watch?v=RJUvNVCqtpI">
+                                          <img src="https://i.ytimg.com/vi/RJUvNVCqtpI/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgrIFcocjAP&rs=AOn4CLDAWekU2FgS6kFrCoLkhMEVb1942Q">
+                                    </a>
+                                    <h4>(a). sip</h4>
+                                    <span>what is ?</span>
+                        </div>
+                        <div>
+                              <a href="https://www.youtube.com/watch?v=rnIKWRpVXOo">
+                                          <img src="https://i.ytimg.com/vi/rnIKWRpVXOo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmWkBArhmKOIUSthS0Y8rgSmBaxQ">
+                                    </a>
+                                    <h4>|𝘿𝙤𝙪𝙭𝙘𝙤𝙞𝙣𝙜𝙗𝙡𝙚𝙪| 布魯諾咖啡店</h4>
+                                    <span>돌콩블루</span>
+                        </div>
+                        <div>
+                              <a href="https://www.youtube.com/watch?v=VjPoY-LXbx0">
+                                          <img src="https://i.ytimg.com/vi/VjPoY-LXbx0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsCB2NazXU7VZXWao-ikWKpjTbiQ">
+                                    </a>
+                                    <h4>Relaxing 1980s City Lofi Mix for Study & Work｜Smooth Beats for a...</h4>
+                                    <span>Lofi (...)</span>
+                        </div>
+                        <div>
+                              <a href="https://www.youtube.com/watch?v=rGyQHyDMZZI">
+                                          <img src="https://i.ytimg.com/vi/rGyQHyDMZZI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASQF6bPEvhHAGs1IAdI9uiO49rOw">
+                                    </a>
+                                    <h4>Fujii Kaze: Tiny Desk Concerts JAPAN</h4>
+                                    <span>NPR Music</span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                        <div>
+                              <a href="">
+                                    <img src="">
+                              </a>
+                              <h4></h4>
+                              <span></span>
+                        </div>
+                  </div>
+            </div>
+</body>
+</html>
